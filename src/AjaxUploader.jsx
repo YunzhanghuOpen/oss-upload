@@ -6,6 +6,11 @@ import getUid from './uid';
 
 const AjaxUploader = React.createClass({
   propTypes: {
+    region: PropTypes.string,
+    accessKeyId: PropTypes.string,
+    accessKeySecret: PropTypes.string,
+    bucket: PropTypes.string,
+
     component: PropTypes.string,
     style: PropTypes.object,
     prefixCls: PropTypes.string,
@@ -24,12 +29,41 @@ const AjaxUploader = React.createClass({
   },
 
   getInitialState() {
+    this.client = null;
     this.reqs = {};
     return {
       uid: getUid(),
     };
   },
 
+  componentDidMount() {
+
+      // 引用 OSS SDK
+      const script = document.createElement("script");
+      script.src = "http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      // 在 SDK 加载成功后，初始化 OSS Client
+      let ossProps = {
+          region: this.props.region,
+          accessKeyId: this.props.accessKeyId,
+          accessKeySecret: this.props.accessKeySecret,
+          bucket: this.props.bucket
+      };
+      setTimeout(function(){
+          this.client = new OSS.Wrapper(ossProps);
+
+          client.list({
+              'max-keys': 10
+          }).then(function (result) {
+              console.log('oss res', result);
+          }).catch(function (err) {
+              console.log('oss err', err);
+          });
+      }, 1000);
+
+  },
   componentWillUnmount() {
     this.abort();
   },
@@ -108,25 +142,21 @@ const AjaxUploader = React.createClass({
       data = data(file);
     }
     const { uid } = file;
-    this.reqs[uid] = request({
-      action: props.action,
-      filename: props.name,
-      file,
-      data,
-      headers: props.headers,
-      withCredentials: props.withCredentials,
-      onProgress: e => {
-        props.onProgress(e, file);
-      },
-      onSuccess: ret => {
-        delete this.reqs[uid];
+    console.log('@file', file);
+
+    var storeAs = file.name;
+    console.log(file.name + ' => ' + storeAs);
+    this.reqs[uid] = client.multipartUpload(storeAs, file).then(function (ret) {
+        console.log('oss upload success', ret);
+        // delete this.reqs[uid];
         props.onSuccess(ret, file);
-      },
-      onError: (err, ret) => {
-        delete this.reqs[uid];
+    }).catch(function (err, ret) {
+        console.log('oss upload error', err);
+        // delete this.reqs[uid];
         props.onError(err, ret, file);
-      },
     });
+    // onProgress 暂不支持
+    // end oss 上传
     onStart(file);
   },
 

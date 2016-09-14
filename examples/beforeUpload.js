@@ -5,6 +5,10 @@ import ReactDOM from 'react-dom';
 import Upload from 'rc-oss-upload';
 
 const props = {
+  region: '<oss region>',
+  accessKeyId: '<Your accessKeyId>',
+  accessKeySecret: '<Your accessKeySecret>',
+  bucket: '<Your bucket name>',
   action: '/upload.do',
   onStart(file) {
     console.log('onStart', file, file.name);

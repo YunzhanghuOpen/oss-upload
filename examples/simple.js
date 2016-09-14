@@ -3,35 +3,33 @@ webpackJsonp([1],{
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(222);
+	module.exports = __webpack_require__(181);
 
 
 /***/ },
 
-/***/ 222:
+/***/ 181:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _extends2 = __webpack_require__(179);
-	
-	var _extends3 = _interopRequireDefault(_extends2);
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /* eslint no-console:0 */
 	
 	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactDom = __webpack_require__(36);
+	var _reactDom = __webpack_require__(35);
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcUpload = __webpack_require__(176);
+	var _rcOssUpload = __webpack_require__(173);
 	
-	var _rcUpload2 = _interopRequireDefault(_rcUpload);
+	var _rcOssUpload2 = _interopRequireDefault(_rcOssUpload);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var style = '\n        .rc-upload-disabled {\n           opacity:0.5;\n        '; /* eslint no-console:0 */
+	var style = '\n        .rc-oss-upload-disabled {\n           opacity:0.5;\n        ';
 	
 	var Test = _react2.default.createClass({
 	  displayName: 'Test',
@@ -95,8 +93,8 @@ webpackJsonp([1],{
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          _rcUpload2.default,
-	          (0, _extends3.default)({}, this.uploaderProps, { ref: 'inner' }),
+	          _rcOssUpload2.default,
+	          _extends({}, this.uploaderProps, { ref: 'inner' }),
 	          _react2.default.createElement(
 	            'a',
 	            null,
@@ -126,8 +124,8 @@ webpackJsonp([1],{
 	            }
 	          },
 	          _react2.default.createElement(
-	            _rcUpload2.default,
-	            (0, _extends3.default)({}, this.uploaderProps, { component: 'div', style: { display: 'inline-block' } }),
+	            _rcOssUpload2.default,
+	            _extends({}, this.uploaderProps, { component: 'div', style: { display: 'inline-block' } }),
 	            _react2.default.createElement(
 	              'a',
 	              null,

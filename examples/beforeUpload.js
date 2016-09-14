@@ -15,17 +15,21 @@ webpackJsonp([0],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactDom = __webpack_require__(36);
+	var _reactDom = __webpack_require__(35);
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _rcUpload = __webpack_require__(176);
+	var _rcOssUpload = __webpack_require__(173);
 	
-	var _rcUpload2 = _interopRequireDefault(_rcUpload);
+	var _rcOssUpload2 = _interopRequireDefault(_rcOssUpload);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var props = {
+	  region: '<oss region>',
+	  accessKeyId: '<Your accessKeyId>',
+	  accessKeySecret: '<Your accessKeySecret>',
+	  bucket: '<Your bucket name>',
 	  action: '/upload.do',
 	  onStart: function onStart(file) {
 	    console.log('onStart', file, file.name);
@@ -61,7 +65,7 @@ webpackJsonp([0],[
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          _rcUpload2.default,
+	          _rcOssUpload2.default,
 	          props,
 	          _react2.default.createElement(
 	            'a',

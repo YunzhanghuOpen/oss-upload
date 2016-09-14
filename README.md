@@ -1,4 +1,4 @@
-# rc-upload
+# rc-oss-upload
 ---
 
 React Upload
@@ -8,10 +8,10 @@ React Upload
 [![Test coverage][coveralls-image]][coveralls-url]
 [![npm download][download-image]][download-url]
 
-[npm-image]: http://img.shields.io/npm/v/rc-upload.svg?style=flat-square
-[npm-url]: http://npmjs.org/package/rc-upload
-[download-image]: https://img.shields.io/npm/dm/rc-upload.svg?style=flat-square
-[download-url]: https://npmjs.org/package/rc-upload
+[npm-image]: http://img.shields.io/npm/v/rc-oss-upload.svg?style=flat-square
+[npm-url]: http://npmjs.org/package/rc-oss-upload
+[download-image]: https://img.shields.io/npm/dm/rc-oss-upload.svg?style=flat-square
+[download-url]: https://npmjs.org/package/rc-oss-upload
 [travis-image]: https://img.shields.io/travis/react-component/upload.svg?style=flat-square
 [travis-url]: https://travis-ci.org/react-component/upload
 [coveralls-image]: https://img.shields.io/coveralls/react-component/upload.svg?style=flat-square
@@ -37,12 +37,12 @@ online example: http://react-component.github.io/upload/examples/simple.html
 
 ## install
 
-[![rc-upload](https://nodei.co/npm/rc-upload.png)](https://npmjs.org/package/rc-upload)
+[![rc-oss-upload](https://nodei.co/npm/rc-oss-upload.png)](https://npmjs.org/package/rc-oss-upload)
 
 ## Usage
 
 ```js
-var Upload = require('rc-upload');
+var Upload = require('rc-oss-upload');
 var React = require('react');
 React.render(<Upload />, container);
 ```
@@ -108,4 +108,4 @@ this.body = ret + '{"url":"xx.jpq"}';
 
 ## License
 
-rc-upload is released under the MIT license.
+rc-oss-upload is released under the MIT license.

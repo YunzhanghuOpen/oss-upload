@@ -2,10 +2,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Upload from 'rc-upload';
+import Upload from 'rc-oss-upload';
 
 const style = `
-        .rc-upload-disabled {
+        .rc-oss-upload-disabled {
            opacity:0.5;
         `;
 

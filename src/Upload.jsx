@@ -34,7 +34,7 @@ const Upload = React.createClass({
   getDefaultProps() {
     return {
       component: 'span',
-      prefixCls: 'rc-upload',
+      prefixCls: 'rc-oss-upload',
       data: {},
       headers: {},
       name: 'file',
